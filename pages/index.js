@@ -20,6 +20,8 @@ const [emblaRef] = useEmblaCarousel()
         </div>
       </BrowserView>
       <MobileView>
+        <h1>Mobile view is in the works!😉👍</h1>
+        <p>please watch on desktop for now</p>
       </MobileView>
     </div>
   );
