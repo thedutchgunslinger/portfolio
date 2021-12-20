@@ -3,7 +3,7 @@ import AboutText from "../pages/AboutText";
 import AboutHeader from "../pages/MyStoryHeader";
 import AboutContact from "../pages/MyStoryContact";
 import Image from "next/image";
-import aboutImage from "../public/images/aboutImg.jpg";
+import aboutImage from "../public/images/aboutImg.JPG";
 import { Reveal, Tween } from "react-gsap";
 
 const browserLayoutMyStory = () => {

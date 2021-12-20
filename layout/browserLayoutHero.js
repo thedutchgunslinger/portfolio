@@ -3,7 +3,7 @@ import HeroTitle from "../pages/HeroTitle";
 import HeroSubtitle from "../pages/HeroSubtitle";
 import ScrollText from "../pages/ScrollText";
 import Image from "next/image";
-import heroImage from "../public/images/heroImg.jpg";
+import heroImage from "../public/images/heroImg.JPG";
 import { gsap, } from "gsap/dist/gsap";
 import React from "react";
 
