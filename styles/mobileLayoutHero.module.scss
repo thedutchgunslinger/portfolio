@@ -1,32 +1,26 @@
 @use "variables" as v;
 
-.heroContainerGrid {
-    height: 100vh;
-    margin: 0 200px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 32px;
+.mobileHeroContainerFlex {
+    margin: v.$margin;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.heroImageContainer {
-    grid-column: 2 /4;
-    grid-row: 1 / 2;
-    height: 95vh;
-    margin: auto 0 -100px 0;
+.mobileHeroImageContainer {
     z-index: 1;
+    margin: -55px 0 0 0;
 }
 
-.heroTitleContainer {
-    grid-column: 3 /5;
-    grid-row: 1 / 2;
-    height: 200px;
-    margin: auto 0 calc(60vh + v.$margin) 0;
+.mobileHeroTitleContainer {
+
     z-index: 10;
+
     h1 {
          font-family: Stretch;
   color: v.$accent-color;
   text-transform: uppercase;
-  font-size: 123px;
+  font-size: 64px;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: v.$accent-color;
@@ -41,22 +35,16 @@
     }
 }
 
-.heroSubtitleContainer {
-    grid-column: 4 / 5;
-    grid-row: 1 / 2;
-    height: 100px;
-    margin: auto 0 calc(60vh - 100px) 0;
+.mobileHeroSubtitleContainer {
+
     p {
           font-size: 32px;
             text-align: right;
     }
 }
 
-.scrollContainer {
-    grid-column: 4 / 5;
-    grid-row: 1 / 2;
-    height: 30vh;
-    margin: auto 0 10vh 0;
+.mobileScrollContainer {
+
     p {
             margin: 0 0;
   font-family: Stretch;

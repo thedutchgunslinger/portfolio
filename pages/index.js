@@ -4,6 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import BrowserLayoutHero from '../layout/browserLayoutHero';
 import BrowserLayoutWork from '../layout/browserLayoutWork';
 import BrowserLayoutMyStory from '../layout/browserLayoutMyStory';
+import MobileLayoutHero from "../layout/mobileLayoutHero";
 
 
 
@@ -17,11 +18,11 @@ const [emblaRef] = useEmblaCarousel()
           <BrowserLayoutHero/>
           <BrowserLayoutWork/>
           <BrowserLayoutMyStory/>
+
         </div>
       </BrowserView>
       <MobileView>
-        <h1>Mobile view is in the works!😉👍</h1>
-        <p>please watch on desktop for now</p>
+        <MobileLayoutHero />
       </MobileView>
     </div>
   );
