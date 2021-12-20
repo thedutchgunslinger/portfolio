@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+.scroll {
+    margin: 0 0;
+  font-family: Stretch;
+  text-transform: uppercase;
+  font-size: 32px;
+  -webkit-text-fill-color: v.$background-color;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: v.$text-color;
+  writing-mode: vertical-lr;
+
+} 

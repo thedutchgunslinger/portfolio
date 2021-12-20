@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37.892" height="36.098" viewBox="0 0 37.892 36.098">
+  <g id="Icon_feather-linkedin" data-name="Icon feather-linkedin" transform="translate(1 1)">
+    <path id="Path_2" data-name="Path 2" d="M25.768,11A11.768,11.768,0,0,1,37.535,22.768V35.33a1,1,0,0,1-1,1H29.357a1,1,0,0,1-1-1V22.768a2.589,2.589,0,0,0-5.179,0V35.33a1,1,0,0,1-1,1H15a1,1,0,0,1-1-1V22.768A11.768,11.768,0,0,1,25.768,11Zm9.768,23.33V22.768a9.768,9.768,0,0,0-19.535,0V34.33h5.178V22.768a4.589,4.589,0,0,1,9.179,0V34.33Z" transform="translate(-0.643 -1.232)" fill="#e9e9e9"/>
+    <path id="Path_3" data-name="Path 3" d="M3,12.5h7.178a1,1,0,0,1,1,1V35.035a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1V13.5A1,1,0,0,1,3,12.5Zm6.178,2H4V34.035H9.178Z" transform="translate(-3 -0.938)" fill="#e9e9e9"/>
+    <path id="Path_4" data-name="Path 4" d="M6.589,11.178a4.589,4.589,0,1,1,4.589-4.589A4.594,4.594,0,0,1,6.589,11.178ZM6.589,4A2.589,2.589,0,1,0,9.178,6.589,2.592,2.592,0,0,0,6.589,4Z" transform="translate(-3 -3)" fill="#e9e9e9"/>
+  </g>
+</svg>

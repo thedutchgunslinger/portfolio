@@ -1,0 +1,40 @@
+@use "variables" as v;
+
+.heroContainerGrid {
+    height: 100vh;
+    margin: 0 200px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+}
+
+.heroImageContainer {
+    grid-column: 2 /4;
+    grid-row: 1 / 2;
+    height: 95vh;
+    margin: auto 0 -100px 0;
+    z-index: 1;
+}
+
+.heroTitleContainer {
+    grid-column: 3 /5;
+    grid-row: 1 / 2;
+    height: 200px;
+    margin: auto 0 calc(60vh + v.$margin) 0;
+    z-index: 10;
+}
+
+.heroSubtitleContainer {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    height: 100px;
+    margin: auto 0 calc(60vh - 100px) 0;
+}
+
+.scrollContainer {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+    height: 30vh;
+    margin: auto 0 10vh 0;
+}
+

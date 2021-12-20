@@ -1,0 +1,22 @@
+@use "variables" as v;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: v.$background-color;
+  color: v.$text-color;
+  font-family: Asap;
+overflow-x: hidden;
+overflow-x: initial !important;
+}
+.embla {
+overflow-x: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  flex: 0 0 80%;
+}

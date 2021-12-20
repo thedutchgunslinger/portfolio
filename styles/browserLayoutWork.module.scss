@@ -1,0 +1,94 @@
+@use 'variables' as v;
+
+
+ .carouselContainer {
+  margin: 0 200px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+overflow: hidden;
+
+ }
+
+ .emblaWrapper {
+    grid-column: 2 / 5;
+    grid-row: 1 / 2;
+ }
+.headerContainer {
+      z-index: 1;
+  font-size: 48px;
+  font-family: Stretch;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: v.$text-color;
+  writing-mode: vertical-lr;
+}
+
+.slideContainer {
+  width: 900px;
+  height: 500px;
+  margin: 0 -165px;
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.imgContainer{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    height: 100%;
+
+z-index: 1;
+}
+
+.slideContainer:hover {
+    cursor: pointer;        
+    .titleContainer {
+        span {
+            -webkit-text-fill-color: v.$accent-color;
+            transition: all 0.5s ease;
+        }
+    }
+    .labelContainer {
+        h2{
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+.titleContainer {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    height: 200px;
+    z-index: 10;
+    font-family: Stretch;
+    font-size: 32px;
+    text-transform: uppercase;
+    h1 {
+        margin: 0;
+        color: v.$accent-color;
+        span {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: v.$accent-color;
+  transition: all 0.5s ease;
+        }
+    }
+}
+
+.labelContainer {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    height: 100px;
+    z-index: 10;
+    margin: auto 0 0 0 ;
+    text-align: right;
+    font-size: 24px;
+    h2 {
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+}

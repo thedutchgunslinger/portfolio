@@ -1,0 +1,21 @@
+@use "variables" as v;
+
+.aboutText {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.contactTitle {
+  font-family: Stretch;
+  font-size: 32px;
+}
+
+.myStoryHeader {
+  font-family: Stretch;
+  font-size: 64px;
+  text-transform: uppercase;
+  -webkit-text-fill-color: v.$background-color;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: v.$text-color;
+  transform: rotate(-90deg);
+}
