@@ -15,7 +15,7 @@ overflow: hidden;
     grid-row: 1 / 2;
  }
 .headerContainer {
-      z-index: 1;
+      z-index: 5;
   font-size: 48px;
   font-family: Stretch;
   text-transform: uppercase;
@@ -33,6 +33,7 @@ overflow: hidden;
     grid-template-columns: repeat(3, 1fr);
     overflow-y: hidden;
     overflow-x: hidden;
+
 }
 
 .imgContainer{
@@ -40,7 +41,7 @@ overflow: hidden;
     grid-row: 1 / 2;
     height: 100%;
 
-z-index: 1;
+z-index: 5;
 }
 
 .slideContainer:hover {
@@ -63,7 +64,7 @@ z-index: 1;
     grid-column: 2 / 4;
     grid-row: 1 / 2;
     height: 200px;
-    z-index: 10;
+    z-index: 6;
     font-family: Stretch;
     font-size: 32px;
     text-transform: uppercase;
@@ -83,7 +84,7 @@ z-index: 1;
     grid-column: 1 / 3;
     grid-row: 1 / 2;
     height: 100px;
-    z-index: 10;
+    z-index: 6;
     margin: auto 0 0 0 ;
     text-align: right;
     font-size: 24px;
