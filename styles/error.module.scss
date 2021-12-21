@@ -1,0 +1,31 @@
+@use 'variables' as v;
+
+.errorContainer {
+    margin: 100px 200px  ;
+}
+
+.title {
+    width: 70%;
+    margin: 0;
+    font-size: 100px;
+    font-family: stretch;
+    color: v.$accent-color;
+     -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: v.$accent-color;
+
+}
+
+.errorLink {
+    font-size: 32px;
+    margin: 100px 0;
+    a {
+        color: v.$text-color;
+        text-decoration: none;
+        transition: all 0.5s ease;  
+    }
+    a:hover {
+        text-decoration: underline;
+        transition: all 0.5s ease;
+    }
+}

@@ -9,6 +9,13 @@ import MobileLayoutHero from "../layout/mobileLayoutHero";
 import React from "react";
 
 
+//TODO: 404 pagina maken
+//TODO: project page maken
+//TODO: page transition maken
+//TODO: terug komen naar juiste project
+//TODO: polijsten
+//TODO: mobile view
+
 
 export default function Home() {
 

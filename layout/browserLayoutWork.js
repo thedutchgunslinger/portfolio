@@ -7,17 +7,40 @@ import Image from "next/image";
 import dePont from "../public/images/dePont.png";
 import { Reveal, Tween } from "react-gsap";
 import _ from "lodash";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 
 function browserLayoutWork({ setOnHoverState }) {
   let callOnHover = (state) => {
   setOnHoverState(state);
   };
+ const router = useRouter();
+ const {
+   query: { index, section },
+ } = router;
 
-  const [emblaRef] = useEmblaCarousel();
+ if(section){
+   let workSection = React.useRef(null);
+   React.useEffect(() => {
+    workSection.scrollIntoView();
+     setTimeout(() => {
+       window.scrollBy(0, -200);
+     }, 500);
 
+   }, []);
+ }
+
+
+  const [emblaRef] = useEmblaCarousel((index ? {startIndex: index} : 0));
+  
   return (
-    <div className={browserLayoutStyles.carouselContainer}>
+    <div
+      className={browserLayoutStyles.carouselContainer}
+      ref={(el) => {
+        workSection = el;
+      }}
+    >
       <Reveal repeat>
         <Tween from={{ opacity: 0.2 }} duration={1} delay={0.5}>
           <div className={browserLayoutStyles.headerContainer}>
@@ -29,11 +52,11 @@ function browserLayoutWork({ setOnHoverState }) {
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
             <div className="embla__slide">
-              <Link href="/project1">
+              <Link href="/dePontDetails" replace>
                 <div className={browserLayoutStyles.slideContainer} id="slide3">
                   <Reveal>
                     <Tween from={{ opacity: 0, y: -100 }} duration={1}>
-                      <div className={browserLayoutStyles.imgContainer}>
+                      <motion.div layoutId='dePontImage' animate={{scale: 1}} className={browserLayoutStyles.imgContainer}>
                         <Image
                           src={dePont}
                           alt="Picture of De pont"
@@ -46,7 +69,7 @@ function browserLayoutWork({ setOnHoverState }) {
                             callOnHover(false);
                           }}
                         />
-                      </div>
+                      </motion.div>
                     </Tween>
                   </Reveal>
                   <Reveal>
@@ -60,9 +83,9 @@ function browserLayoutWork({ setOnHoverState }) {
                           callOnHover(false);
                         }}
                       >
-                        <h1>
+                        <motion.h1 layoutId='dePontTitle'>
                           De pont <span>Mindlabs</span>
-                        </h1>
+                        </motion.h1>
                       </div>
                     </Tween>
                   </Reveal>
@@ -85,11 +108,11 @@ function browserLayoutWork({ setOnHoverState }) {
               </Link>
             </div>
             <div className="embla__slide">
-              <Link href="/project1">
+              <Link href="/workshopDetails">
                 <div className={browserLayoutStyles.slideContainer} id="slide3">
                   <Reveal>
                     <Tween from={{ opacity: 0, y: -100 }} duration={1}>
-                      <div className={browserLayoutStyles.imgContainer}>
+                      <motion.div layoutId='workshopImage' className={browserLayoutStyles.imgContainer}>
                         <Image
                           src={dePont}
                           alt="Picture of De pont"
@@ -102,7 +125,7 @@ function browserLayoutWork({ setOnHoverState }) {
                             callOnHover(false);
                           }}
                         />
-                      </div>
+                      </motion.div>
                     </Tween>
                   </Reveal>
                   <Reveal>
@@ -116,9 +139,9 @@ function browserLayoutWork({ setOnHoverState }) {
                           callOnHover(false);
                         }}
                       >
-                        <h1>
+                        <motion.h1 layoutId='workshopTitle'>
                           Fontys <span>Workshop</span>
-                        </h1>
+                        </motion.h1>
                       </div>
                     </Tween>
                   </Reveal>
@@ -141,11 +164,11 @@ function browserLayoutWork({ setOnHoverState }) {
               </Link>
             </div>
             <div className="embla__slide">
-              <Link href="/project1">
+              <Link href="/portfolioDetails">
                 <div className={browserLayoutStyles.slideContainer} id="slide3">
                   <Reveal>
                     <Tween from={{ opacity: 0, y: -100 }} duration={1}>
-                      <div className={browserLayoutStyles.imgContainer}>
+                      <motion.div layoutId='portfolioImage' className={browserLayoutStyles.imgContainer}>
                         <Image
                           src={dePont}
                           alt="Picture of De pont"
@@ -158,7 +181,7 @@ function browserLayoutWork({ setOnHoverState }) {
                             callOnHover(false);
                           }}
                         />
-                      </div>
+                      </motion.div>
                     </Tween>
                   </Reveal>
                   <Reveal>
@@ -172,9 +195,9 @@ function browserLayoutWork({ setOnHoverState }) {
                           callOnHover(false);
                         }}
                       >
-                        <h1>
+                        <motion.h1 layoutId='portfolioTitle'>
                           NBeij <span>Portfolio</span>
-                        </h1>
+                        </motion.h1>
                       </div>
                     </Tween>
                   </Reveal>
