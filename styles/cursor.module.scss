@@ -16,7 +16,9 @@
 }
 
 .cursorView {
-    scale: 4;
+    width: 80px;
+    height: 80px;
+    transform: scale(4);
     transform: translate(0, 0);
     transition-duration: 300ms;
     opacity: 1;
@@ -28,7 +30,7 @@
 .cursorView::after {
     content: "View";
     position: absolute;
-    font-size: 6px;
+    font-size: 24px;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
