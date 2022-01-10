@@ -28,12 +28,20 @@ overflow: hidden;
 .slideContainer {
   width: 900px;
   height: 500px;
-  margin: 0 -165px;
   display: grid;
     grid-template-columns: repeat(3, 1fr);
     overflow-y: hidden;
     overflow-x: hidden;
 
+}
+
+@-moz-document url-prefix() {
+.slideContainer {
+
+margin: 0 -165px;
+
+
+}
 }
 
 .imgContainer{

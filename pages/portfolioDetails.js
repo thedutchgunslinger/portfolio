@@ -33,33 +33,37 @@ const dePontDetails = () => {
         }}
       ></div>
       <div className={projectDetailsStyles.ContainerGrid}>
-        <div className={projectDetailsStyles.titleContainer}>
-          <motion.h1 layoutId="portfolioTitle">
-            NBeij <span>Portfolio</span>
-          </motion.h1>
-        </div>
-        <motion.div
-          layoutId="portfolioImage"
-          className={projectDetailsStyles.imageContainer}
-        >
-          <Link
-            href={{ pathname: `/`, query: { index: "2", section: "work" } }}
-            replace
-          >
-            <Image
-              src={dePont}
-              alt="Picture of De pont"
-              layout="fill"
-              objectFit="fit"
-              onMouseEnter={() => {
-                setIsShown(true);
-              }}
-              onMouseLeave={() => {
-                setIsShown(false);
-              }}
-            />
-          </Link>
-        </motion.div>
+        <Reveal>
+          <Tween from={{ opacity: 0, y: -200 }} duration={1} delay={0}>
+            <div className={projectDetailsStyles.titleContainer}>
+              <h1 layoutId="dePontTitle">
+                Showcase <span>Portfolio</span>
+              </h1>
+            </div>
+            <div
+              layoutId="dePontImage"
+              className={projectDetailsStyles.imageContainer}
+            >
+              <Link
+                href={{ pathname: "/", query: { index: "2", section: "work" } }}
+                replace
+              >
+                <Image
+                  src={dePont}
+                  alt="Picture of De pont"
+                  layout="fill"
+                  objectFit="fit"
+                  onMouseEnter={() => {
+                    setIsShown(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsShown(false);
+                  }}
+                />
+              </Link>
+            </div>
+          </Tween>
+        </Reveal>
         <Reveal>
           <Tween from={{ opacity: 0, y: 200 }} duration={1} delay={0}>
             <div className={projectDetailsStyles.textContainer}>

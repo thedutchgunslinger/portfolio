@@ -1,0 +1,102 @@
+@use 'variables' as v;
+
+.ContainerGrid {
+    height: 100vh;
+    margin: -32px 200px v.$margin 200px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+    overflow: hidden;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: left;
+    margin: v.$margin 0 auto 0;
+    grid-column: 1 /4;
+    grid-row: 1 / 2;
+    height: 200px;
+    background-color: v.$background-color;
+    font-family: Stretch;
+    font-size: 32px;
+    text-transform: uppercase;
+    h1 {
+        margin: 0;
+        color: v.$accent-color;
+        span {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: v.$accent-color;
+  transition: all 0.5s ease;
+        }
+    }
+}
+
+.imageContainer {
+    grid-column: 1 /4;
+    grid-row: 1 / 2;
+    height: calc(100% - 200px);
+    margin: auto 0 0 0;
+    position: relative;
+}
+
+.textContainer {
+    overflow-y: scroll;
+    grid-column: 4 /6;
+    grid-row: 1 / 2;
+    margin: 200px 0 0 0;
+    line-height: 1.4;
+    font-size: 20px;
+    h2 {
+        font-family: Stretch;
+        color: v.$text-color;
+        text-transform: uppercase;
+        font-size: 36px;
+        line-height: 1;
+        margin: 0 0 0 0;
+    }
+
+        .textImageContainer {
+            position: relative;
+            width: 100%;
+        }
+
+
+}
+.cursor {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid v.$text-color;
+    opacity: .5;
+    transition-duration: 100ms;
+    transition-timing-function: ease-out;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    pointer-events: none;
+    transition-duration: 300ms;
+}
+
+.cursorView {
+      width: 80px;
+    height: 80px;
+    transform: scale(4);
+    transform: translate(0, 0);
+    transition-duration: 300ms;
+    opacity: 1;
+   
+    border: 1px solid v.$text-color;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.cursorView::after {
+    content: "Back";
+    position: absolute;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+ 
+
+}

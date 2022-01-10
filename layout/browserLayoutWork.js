@@ -24,9 +24,7 @@ function browserLayoutWork({ setOnHoverState }) {
    let workSection = React.useRef(null);
    React.useEffect(() => {
     workSection.scrollIntoView();
-     setTimeout(() => {
        window.scrollBy(0, -200);
-     }, 500);
 
    }, []);
  }
@@ -56,7 +54,7 @@ function browserLayoutWork({ setOnHoverState }) {
                 <div className={browserLayoutStyles.slideContainer} id="slide3">
                   <Reveal>
                     <Tween from={{ opacity: 0, y: -100 }} duration={1}>
-                      <motion.div layoutId='dePontImage' animate={{scale: 1}} className={browserLayoutStyles.imgContainer}>
+                      <div layoutId='dePontImage' animate={{scale: 1}} className={browserLayoutStyles.imgContainer}>
                         <Image
                           src={dePont}
                           alt="Picture of De pont"
@@ -69,7 +67,7 @@ function browserLayoutWork({ setOnHoverState }) {
                             callOnHover(false);
                           }}
                         />
-                      </motion.div>
+                      </div>
                     </Tween>
                   </Reveal>
                   <Reveal>
@@ -83,9 +81,9 @@ function browserLayoutWork({ setOnHoverState }) {
                           callOnHover(false);
                         }}
                       >
-                        <motion.h1 layoutId='dePontTitle'>
+                        <h1 layoutId='dePontTitle'>
                           De pont <span>Mindlabs</span>
-                        </motion.h1>
+                        </h1>
                       </div>
                     </Tween>
                   </Reveal>
@@ -112,7 +110,7 @@ function browserLayoutWork({ setOnHoverState }) {
                 <div className={browserLayoutStyles.slideContainer} id="slide3">
                   <Reveal>
                     <Tween from={{ opacity: 0, y: -100 }} duration={1}>
-                      <motion.div layoutId='workshopImage' className={browserLayoutStyles.imgContainer}>
+                      < div layoutId='workshopImage' className={browserLayoutStyles.imgContainer}>
                         <Image
                           src={dePont}
                           alt="Picture of De pont"
@@ -125,7 +123,7 @@ function browserLayoutWork({ setOnHoverState }) {
                             callOnHover(false);
                           }}
                         />
-                      </motion.div>
+                      </ div>
                     </Tween>
                   </Reveal>
                   <Reveal>
@@ -139,9 +137,9 @@ function browserLayoutWork({ setOnHoverState }) {
                           callOnHover(false);
                         }}
                       >
-                        <motion.h1 layoutId='workshopTitle'>
+                        < h1 layoutId='workshopTitle'>
                           Fontys <span>Workshop</span>
-                        </motion.h1>
+                        </ h1>
                       </div>
                     </Tween>
                   </Reveal>
@@ -168,7 +166,7 @@ function browserLayoutWork({ setOnHoverState }) {
                 <div className={browserLayoutStyles.slideContainer} id="slide3">
                   <Reveal>
                     <Tween from={{ opacity: 0, y: -100 }} duration={1}>
-                      <motion.div layoutId='portfolioImage' className={browserLayoutStyles.imgContainer}>
+                      < div layoutId='portfolioImage' className={browserLayoutStyles.imgContainer}>
                         <Image
                           src={dePont}
                           alt="Picture of De pont"
@@ -181,7 +179,7 @@ function browserLayoutWork({ setOnHoverState }) {
                             callOnHover(false);
                           }}
                         />
-                      </motion.div>
+                      </ div>
                     </Tween>
                   </Reveal>
                   <Reveal>
@@ -195,9 +193,9 @@ function browserLayoutWork({ setOnHoverState }) {
                           callOnHover(false);
                         }}
                       >
-                        <motion.h1 layoutId='portfolioTitle'>
+                        < h1 layoutId='portfolioTitle'>
                           NBeij <span>Portfolio</span>
-                        </motion.h1>
+                        </ h1>
                       </div>
                     </Tween>
                   </Reveal>

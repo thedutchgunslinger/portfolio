@@ -6,7 +6,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Reveal, Tween } from "react-gsap";
 
-const workshopDetails = () => {
+const dePontDetails = () => {
   const [isShown, setIsShown] = React.useState(false);
 
   const [cursorX, setCursorX] = React.useState();
@@ -33,33 +33,37 @@ const workshopDetails = () => {
         }}
       ></div>
       <div className={projectDetailsStyles.ContainerGrid}>
-        <div className={projectDetailsStyles.titleContainer}>
-          <motion.h1 layoutId="workshopTitle">
-            Fontys <span>Workshop</span>
-          </motion.h1>
-        </div>
-        <motion.div
-          layoutId="workshopImage"
-          className={projectDetailsStyles.imageContainer}
-        >
-          <Link
-            href={{ pathname: "/", query: { index: "1", section: "work" } }}
-            replace
-          >
-            <Image
-              src={dePont}
-              alt="Picture of De pont"
-              layout="fill"
-              objectFit="fit"
-              onMouseEnter={() => {
-                setIsShown(true);
-              }}
-              onMouseLeave={() => {
-                setIsShown(false);
-              }}
-            />
-          </Link>
-        </motion.div>
+        <Reveal>
+          <Tween from={{ opacity: 0, y: -200 }} duration={1} delay={0}>
+            <div className={projectDetailsStyles.titleContainer}>
+              <h1 layoutId="dePontTitle">
+                Fontys  <span>Workshop</span>
+              </h1>
+            </div>
+            <div
+              layoutId="dePontImage"
+              className={projectDetailsStyles.imageContainer}
+            >
+              <Link
+                href={{ pathname: "/", query: { index: "1", section: "work" } }}
+                replace
+              >
+                <Image
+                  src={dePont}
+                  alt="Picture of De pont"
+                  layout="fill"
+                  objectFit="fit"
+                  onMouseEnter={() => {
+                    setIsShown(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsShown(false);
+                  }}
+                />
+              </Link>
+            </div>
+          </Tween>
+        </Reveal>
         <Reveal>
           <Tween from={{ opacity: 0, y: 200 }} duration={1} delay={0}>
             <div className={projectDetailsStyles.textContainer}>
@@ -131,4 +135,4 @@ const workshopDetails = () => {
   );
 };
 
-export default workshopDetails;
+export default dePontDetails;
