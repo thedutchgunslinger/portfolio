@@ -49,7 +49,7 @@ const dePontDetails = () => {
               className={projectDetailsStyles.imageContainer}
             >
               <Link
-                href={{ pathname: "/", query: { index: "0", section: "work" } }}
+                href={{ pathname: "/", query: { section: "work" } }}
                 replace
               >
                 <Image

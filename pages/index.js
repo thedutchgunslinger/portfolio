@@ -45,7 +45,7 @@ React.useEffect(() => {
         </div>
       </BrowserView>
       <MobileView>
-        {/* <MobileLayoutHero /> */}
+        <MobileLayoutHero />
 
         <h1>mobile view is in the works👍😉😎</h1>
       </MobileView>
