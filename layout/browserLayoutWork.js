@@ -12,6 +12,10 @@ import { motion } from "framer-motion";
 
 
 function browserLayoutWork({ setOnHoverState }) {
+
+
+
+
   let callOnHover = (state) => {
   setOnHoverState(state);
   };
@@ -19,18 +23,19 @@ function browserLayoutWork({ setOnHoverState }) {
  const {
    query: { index, section },
  } = router;
+   const [emblaRef] = useEmblaCarousel(index ? { startIndex: index } : 0);
 
  if(section){
-   let workSection = React.useRef(null);
+   let workSection = React.useRef();
    React.useEffect(() => {
     workSection.scrollIntoView();
        window.scrollBy(0, -200);
-
-   }, []);
+     window.history.replaceState({}, document.title, "/");
+   });
  }
+ 
 
 
-  const [emblaRef] = useEmblaCarousel((index ? {startIndex: index} : 0));
   
   return (
     <div
