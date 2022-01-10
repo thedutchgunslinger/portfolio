@@ -25,12 +25,11 @@ overflow-x: hidden;
   position: relative;
   background-color: v.$text-color;
   margin-top: 20px;
-  max-width: 270px;
-  width: calc(100% - 40px);
+  max-width: 600px;
   height: 4px;
   overflow: hidden;
   border-radius: 2px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
 }
 
@@ -41,12 +40,4 @@ overflow-x: hidden;
   top: 0;
   bottom: 0;
   left: -100%;
-}
-
-@-moz-document url-prefix() {
-  .embla__progress{
-    margin-left: 20%;
-
-  }
-
 }
