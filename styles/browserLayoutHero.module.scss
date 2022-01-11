@@ -70,3 +70,29 @@
     }
 }
 
+@media only screen and (min-device-width: 900px) and (max-device-width: 1600px) {
+   .heroSubtitleContainer {
+  
+
+    p {
+          font-size: 28px;
+            text-align: right;
+    }
+}
+    .heroTitleContainer {
+        margin: auto 0 calc(50vh + v.$margin) 0;
+    h1 {
+   
+    font-size: 84px;
+
+    }
+    }
+    .scrollContainer {
+
+    p {
+ 
+        font-size: 24px;
+    }
+}
+
+}

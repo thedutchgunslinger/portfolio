@@ -45,3 +45,21 @@
   -webkit-text-stroke-color: v.$text-color;
   writing-mode: vertical-lr;
 }
+
+@media only screen and (min-device-width: 900px) and (max-device-width: 1600px) {
+.headerContainer {
+font-size: 34px;
+margin: auto 0 calc(120% - 90px) 0;
+}
+.textContainer {
+
+  font-size: 16px;
+  margin: auto 0 calc(120% - 480px - v.$margin) 0;
+
+}
+.contactContainer {
+
+  margin: auto 0 calc(120% - 100px) 0;
+ 
+}
+}
