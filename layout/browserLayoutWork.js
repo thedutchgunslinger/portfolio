@@ -9,6 +9,7 @@ import { Reveal, Tween } from "react-gsap";
 import _ from "lodash";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+import { PrevButton, NextButton } from "../pages/EmblaCarouselButtons";
 
 
 function browserLayoutWork({ setOnHoverState }) {
@@ -45,24 +46,32 @@ function browserLayoutWork({ setOnHoverState }) {
 
    });
 
-   const [scrollProgress, setScrollProgress] = React.useState(0);
+    const [prevBtnEnabled, setPrevBtnEnabled] = React.useState(false);
+    const [nextBtnEnabled, setNextBtnEnabled] = React.useState(false);
+    const [scrollProgress, setScrollProgress] = React.useState(0);
 
+    const scrollPrev = React.useCallback(() => embla && embla.scrollPrev(), [embla]);
+    const scrollNext = React.useCallback(() => embla && embla.scrollNext(), [embla]);
 
+    const onSelect = React.useCallback(() => {
+      if (!embla) return;
+      setPrevBtnEnabled(embla.canScrollPrev());
+      setNextBtnEnabled(embla.canScrollNext());
+    }, [embla]);
 
+    const onScroll = React.useCallback(() => {
+      if (!embla) return;
+      const progress = Math.max(0, Math.min(1, embla.scrollProgress()));
+      setScrollProgress(progress * 100);
+    }, [embla, setScrollProgress]);
 
-   const onScroll = React.useCallback(() => {
-     if (!embla) return;
-     const progress = Math.max(0, Math.min(1, embla.scrollProgress()));
-     setScrollProgress(progress * 100);
-     console.log(embla.scrollProgress());
-   }, [embla, setScrollProgress]);
-
-   console.log(scrollProgress);
-   React.useEffect(() => {
-     if (!embla) return;
-     onScroll();
-     embla.on("scroll", onScroll);
-   }, [embla, onScroll]);
+    React.useEffect(() => {
+      if (!embla) return;
+      onSelect();
+      onScroll();
+      embla.on("select", onSelect);
+      embla.on("scroll", onScroll);
+    }, [embla, onSelect, onScroll]);
   
   return (
     <div
@@ -262,15 +271,20 @@ function browserLayoutWork({ setOnHoverState }) {
           </div>
         </div>
         <Reveal repeat>
-        <Tween from={{ opacity: 0.2 }} duration={1} delay={0.5}>
-        <div className="embla__progress">
-          <div
-            className="embla__progress__bar"
-            style={{ transform: `translateX(${scrollProgress}%)` }}
-          />
-        </div>
-      </Tween>
-    </Reveal>
+          <Tween from={{ opacity: 0.2 }} duration={1} delay={0.5}>
+            <div className="carouselNav">
+
+              <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+              <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+                </div>
+            <div className="embla__progress">
+              <div
+                className="embla__progress__bar"
+                style={{ transform: `translateX(${scrollProgress}%)` }}
+                />
+            </div>
+          </Tween>
+        </Reveal>
       </div>
     </div>
   );

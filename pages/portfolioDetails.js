@@ -34,7 +34,7 @@ const dePontDetails = () => {
       ></div>
       <div className={projectDetailsStyles.ContainerGrid}>
         <Reveal>
-          <Tween from={{ opacity: 0, y: -200 }} duration={1} delay={0}>
+          <Tween from={{ opacity: 0, y: -200 }} duration={.7} delay={0}>
             <div className={projectDetailsStyles.titleContainer}>
               <h1 layoutId="dePontTitle">
                 Showcase <span>Portfolio</span>
