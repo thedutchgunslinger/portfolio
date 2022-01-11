@@ -9,7 +9,7 @@ import { Reveal, Tween } from "react-gsap";
 import _ from "lodash";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { PrevButton, NextButton } from "../pages/EmblaCarouselButtons";
+import { PrevButton, NextButton } from "./assets/EmblaCarouselButtons";
 
 
 function browserLayoutWork({ setOnHoverState }) {
