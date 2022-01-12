@@ -151,3 +151,25 @@ margin-top: 0px;
 
 }
 }
+
+@media only screen and (max-width: 800px) {
+  .embla {
+    overflow-x: visible;
+  }
+  .embla__button {
+margin-top: 0px;
+  width: 15px;
+  height: 15px;
+
+}
+.embla__progress {
+
+  max-width: 100%;
+
+}
+
+.carouselNav {
+  padding: 0 30px;
+  margin: -23px 0 0 0;
+}
+}

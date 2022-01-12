@@ -121,3 +121,46 @@ z-index: 5;
     }
 
 }
+
+@media only screen and (max-width: 800px) {
+ .carouselContainer {
+
+  display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    margin: 0;
+
+ }
+ .headerContainer {
+
+  font-size: 24px;
+  writing-mode: lr;
+      margin: 0 10%;
+}
+
+.slideContainer {
+  width: 100%;  
+  height: auto;
+  display: grid;
+margin: 0;
+overflow: visible;
+
+}
+.titleContainer {
+    font-size: 12px;
+
+}
+.labelContainer {
+
+    height: auto;
+    z-index: 6;
+    margin: auto 10px 15px 0 ;
+    text-align: right;
+    font-size: 10px;
+    h2 {
+        opacity: 1;
+
+    }
+}
+}

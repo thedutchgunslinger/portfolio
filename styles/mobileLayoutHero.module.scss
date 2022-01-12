@@ -1,59 +1,65 @@
 @use "variables" as v;
 
-// .mobileHeroContainerFlex {
-//     margin: v.$margin;
-//     display: flex;
-//     flex-direction: column;
+.mobileHeroContainerFlex {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw);
+    align-items: center;
 
-// }
 
-// .mobileHeroImageContainer {
-//     z-index: 1;
-//     margin: -55px 0 0 0;
-// }
 
-// .mobileHeroTitleContainer {
+}
 
-//     z-index: 10;
+.mobileHeroImageContainer {
+    width: 60%;
+}
 
-//     h1 {
-//          font-family: Stretch;
-//   color: v.$accent-color;
-//   text-transform: uppercase;
-//   font-size: 64px;
-//   -webkit-text-fill-color: transparent;
-//   -webkit-text-stroke-width: 4px;
-//   -webkit-text-stroke-color: v.$accent-color;
-//   line-height: 1;
-//   transition: all 0.5s ease;
-//   text-align: right;
-//   margin: 0 0 0 0;
-//     }
-//     h1:hover {
-//         -webkit-text-fill-color: v.$accent-color;
-//         transition: all 0.5s ease;
-//     }
-// }
+    .mobileHeroTitleContainer {
+        margin-right: 50px;
+        z-index: 10;
 
-// .mobileHeroSubtitleContainer {
+        h1 {
+            position: absolute;
+            font-family: Stretch;
+    color: v.$accent-color;
+    text-transform: uppercase;
+    font-size: 48px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: v.$accent-color;
+    line-height: 1;
+    transition: all 0.5s ease;
+    text-align: right;
+    margin: 30px 0 0 0;
+        }
+        h1:hover {
+            -webkit-text-fill-color: v.$accent-color;
+            transition: all 0.5s ease;
+        }
+    }
 
-//     p {
-//           font-size: 32px;
-//             text-align: right;
-//     }
-// }
+.mobileHeroSubtitleContainer {
 
-// .mobileScrollContainer {
+    p {
+          font-size: 22px;
+            text-align: right;
+    }
+}
 
-//     p {
-//             margin: 0 0;
-//   font-family: Stretch;
-//   text-transform: uppercase;
-//   font-size: 32px;
-//   -webkit-text-fill-color: v.$background-color;
-//   -webkit-text-stroke-width: 2px;
-//   -webkit-text-stroke-color: v.$text-color;
-//   writing-mode: vertical-lr;
-//     }
-// }
+.mobileScrollContainer {
+    align-self: flex-end;
+    position: absolute;
+    margin-top: 170px;
+
+    p {
+  font-family: Stretch;
+  text-transform: uppercase;
+  font-size: 22px;
+  -webkit-text-fill-color: v.$background-color;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: v.$text-color;
+  writing-mode: vertical-lr;
+    }
+}
 

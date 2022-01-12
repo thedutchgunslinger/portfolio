@@ -6,6 +6,7 @@ import BrowserLayoutHero from '../layout/browserLayoutHero';
 import BrowserLayoutWork from '../layout/browserLayoutWork';
 import BrowserLayoutMyStory from '../layout/browserLayoutMyStory';
 import MobileLayoutHero from "../layout/mobileLayoutHero";
+import MobileLayoutWork from "../layout/mobileLayoutWork";
 import React from "react";
 
 
@@ -30,7 +31,6 @@ React.useEffect(() => {
 
   return (
     <div>
-      <BrowserView>
         <div
           className={(onHoverState ? `${cursorStyles.cursor} ${cursorStyles.cursorView}`: cursorStyles.cursor)}
           style={{
@@ -43,12 +43,7 @@ React.useEffect(() => {
           <BrowserLayoutWork setOnHoverState={setOnHoverState} />
           <BrowserLayoutMyStory />
         </div>
-      </BrowserView>
-      <MobileView>
-        <MobileLayoutHero />
-
-        <h1>mobile view is in the works👍😉😎</h1>
-      </MobileView>
+    
     </div>
   );
 }

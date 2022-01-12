@@ -6,3 +6,9 @@
     gap: 300px;
 }
 
+@media only screen and (max-width: 800px) {
+    .layoutFlex {
+        flex-direction: column;
+        gap: 0;
+    }
+}

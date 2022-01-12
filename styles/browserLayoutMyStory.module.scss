@@ -63,3 +63,14 @@ margin: auto 0 calc(120% - 90px) 0;
  
 }
 }
+
+@media only screen and (max-width: 800px) {
+
+  .containerGrid {
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+ gap: 0;
+}
+}
