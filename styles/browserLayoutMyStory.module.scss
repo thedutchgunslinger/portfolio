@@ -73,4 +73,29 @@ margin: auto 0 calc(120% - 90px) 0;
   flex-direction: column;
  gap: 0;
 }
+ .headerContainer {
+
+  font-size: 24px;
+  writing-mode: lr;
+      margin: 0 10%;
+    height: auto;
+}
+.imageContainer {
+
+  height: auto;
+  margin: 0 10%;
+  z-index: 1;
+}
+.textContainer {
+
+  font-size: 16px;
+  margin: 0 10%;
+
+}
+.contactContainer {
+
+  height: 150px;
+  margin: 0 10% 50px 10%;
+
+}
 }

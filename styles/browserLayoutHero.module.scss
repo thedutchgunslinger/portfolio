@@ -101,7 +101,7 @@
     .heroContainerGrid {
     
         width: 100vw;
-    
+    height: 90vh;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -146,7 +146,7 @@ right: 10%;
 }
 .heroSubtitleContainer {
     position: absolute;
-    bottom: -100px;
+    bottom: -150px;
     height: 100px;
     right: 20%;
     width: 200px;

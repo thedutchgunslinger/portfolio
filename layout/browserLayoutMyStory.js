@@ -10,6 +10,13 @@ const browserLayoutMyStory = () => {
   return (
     <div>
       <div className={browserLayoutStyles.containerGrid}>
+        <Reveal repeat>
+          <Tween from={{ opacity: 0.2 }} duration={1} delay={0.5}>
+            <div className={browserLayoutStyles.headerContainer}>
+              <AboutHeader />
+            </div>
+          </Tween>
+        </Reveal>
         <Reveal>
           <Tween from={{ opacity: 0, y: -100 }} duration={1}>
             <div className={browserLayoutStyles.imageContainer}>
@@ -33,13 +40,6 @@ const browserLayoutMyStory = () => {
           <Tween from={{ opacity: 0, x: 100 }} duration={1} delay={0}>
             <div className={browserLayoutStyles.contactContainer}>
               <AboutContact />
-            </div>
-          </Tween>
-        </Reveal>
-        <Reveal repeat>
-          <Tween from={{ opacity: .2}} duration={1} delay={.5}>
-            <div className={browserLayoutStyles.headerContainer}>
-              <AboutHeader />
             </div>
           </Tween>
         </Reveal>
