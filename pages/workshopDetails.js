@@ -7,11 +7,13 @@ import { motion } from "framer-motion";
 import { Reveal, Tween } from "react-gsap";
 
 const dePontDetails = () => {
+  // haal de prop van de cursor state op
   const [isShown, setIsShown] = React.useState(false);
 
   const [cursorX, setCursorX] = React.useState();
   const [cursorY, setCursorY] = React.useState();
 
+  // zet de cursor positio op de muis positie als deze beweegt
   React.useEffect(() => {
     window.addEventListener("mousemove", (e) => {
       setCursorX(e.pageX);
@@ -34,10 +36,10 @@ const dePontDetails = () => {
       ></div>
       <div className={projectDetailsStyles.ContainerGrid}>
         <Reveal>
-          <Tween from={{ opacity: 0, y: -200 }} duration={.7} delay={0}>
+          <Tween from={{ opacity: 0, y: -200 }} duration={0.7} delay={0}>
             <div className={projectDetailsStyles.titleContainer}>
               <h1 layoutId="dePontTitle">
-                Fontys  <span>Workshop</span>
+                Fontys <span>Workshop</span>
               </h1>
             </div>
             <div

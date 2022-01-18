@@ -3,16 +3,16 @@ import projectDetailsStyles from "../styles/projectDetails.module.scss";
 import Image from "next/image";
 import dePont from "../public/images/dePont.png";
 import React from "react";
-import { motion } from "framer-motion";
 import { Reveal, Tween } from "react-gsap";
 
 
 
 
 const dePontDetails = () => {
+  // haal de prop van de cursor state op
     const [isShown, setIsShown] = React.useState(false);
 
-
+// zet de cursor positio op de muis positie als deze beweegt
     const [cursorX, setCursorX] = React.useState();
     const [cursorY, setCursorY] = React.useState();
 

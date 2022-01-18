@@ -8,12 +8,13 @@ import { gsap, } from "gsap/dist/gsap";
 import React from "react";
 
 const browserLayout = () => {
+  // haal alle elementen op die geanimeerd moeten worden
   let heroImg = React.useRef(null);
   let heroTitle = React.useRef(null);
   let heroSubtitle = React.useRef(null);
   let heroScroll = React.useRef(null);
   
-  
+  // voer de animaties uit als de pagina geladen is
   React.useEffect( () => {
         gsap.from(
           heroImg,1.5, {
@@ -69,11 +70,6 @@ const browserLayout = () => {
           <div className={browserLayoutStyles.scrollContainer} ref={el => {heroScroll = el}}>
             <ScrollText />
           </div>
-          {/* <div className={browserLayoutStyles.gridItem}></div>
-                <div className={browserLayoutStyles.gridItem}></div>
-                <div className={browserLayoutStyles.gridItem}></div>
-                <div className={browserLayoutStyles.gridItem}></div>
-                <div className={browserLayoutStyles.gridItem}></div> */}
         </div>
       </div>
     );

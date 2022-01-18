@@ -8,7 +8,6 @@ import dePont from "../public/images/dePont.png";
 import { Reveal, Tween } from "react-gsap";
 import _ from "lodash";
 import { useRouter } from "next/router";
-import { motion } from "framer-motion";
 import { PrevButton, NextButton } from "./assets/EmblaCarouselButtons";
 
 
@@ -16,55 +15,53 @@ function browserLayoutWork({ setOnHoverState }) {
 
 
 
-
+// check of de cursor over een slide staat
   let callOnHover = (state) => {
   setOnHoverState(state);
   };
+
+// haal de GET param op van de url
  const router = useRouter();
  const {
-   query: { index, section },
+   query: { section },
  } = router;
 
 
-
+//check of de url een GET param bevat en scroll naar de juiste sectie, daarna verwijder de GET param uit de url
    let workSection = React.useRef();
    React.useEffect(() => {
       if(section){
     workSection.scrollIntoView();
        window.scrollBy(0, -200);
-      //  window.history.replace({ pathname: `/`})
-       
-      // window.history.replaceState({}, document.title, "/");
-      // const router = useRouter();
        router.replace("/", undefined, { shallow: true });
 
       
     }
    });
- 
+ //initialiseer de carousel
    const [viewportRef, embla] = useEmblaCarousel({
 
    });
-
+//initialiseer de navigatie items.
     const [prevBtnEnabled, setPrevBtnEnabled] = React.useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = React.useState(false);
     const [scrollProgress, setScrollProgress] = React.useState(0);
 
     const scrollPrev = React.useCallback(() => embla && embla.scrollPrev(), [embla]);
     const scrollNext = React.useCallback(() => embla && embla.scrollNext(), [embla]);
-
+//check of er op de navigaties knopjes word gedrukt en scroll naar de juiste slide
     const onSelect = React.useCallback(() => {
       if (!embla) return;
       setPrevBtnEnabled(embla.canScrollPrev());
       setNextBtnEnabled(embla.canScrollNext());
     }, [embla]);
-
+//pas de progressie bar aan als er gescrolled word
     const onScroll = React.useCallback(() => {
       if (!embla) return;
       const progress = Math.max(0, Math.min(1, embla.scrollProgress()));
       setScrollProgress(progress * 100);
     }, [embla, setScrollProgress]);
-
+//voor de fucnties uit als er iets veranderd
     React.useEffect(() => {
       if (!embla) return;
       onSelect();
