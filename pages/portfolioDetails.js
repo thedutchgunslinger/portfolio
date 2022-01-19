@@ -3,7 +3,6 @@ import projectDetailsStyles from "../styles/projectDetails.module.scss";
 import Image from "next/image";
 import dePont from "../public/images/dePont.png";
 import React from "react";
-import { motion } from "framer-motion";
 import { Reveal, Tween } from "react-gsap";
 
 const dePontDetails = () => {
@@ -13,6 +12,7 @@ const dePontDetails = () => {
   const [cursorX, setCursorX] = React.useState();
   const [cursorY, setCursorY] = React.useState();
 
+  // zet de cursor positio op de muis positie als deze beweegt
   React.useEffect(() => {
     window.addEventListener("mousemove", (e) => {
       setCursorX(e.pageX);
