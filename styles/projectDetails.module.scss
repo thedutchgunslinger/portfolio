@@ -38,8 +38,22 @@
     height: calc(100% - 200px);
     margin: auto 0 0 0;
     position: relative;
+
 }
 
+.imageContainerView::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  transition: .5s ease;
+  pointer-events: none;
+  z-index: 100;
+}
 .textContainer {
     overflow-y: scroll;
     grid-column: 4 /6;
@@ -82,7 +96,7 @@
       width: 80px;
     height: 80px;
     transform: scale(4);
-    transform: translate(0, 0);
+    transform: translate(-50%, -50%);
     transition-duration: 300ms;
     opacity: 1;
    
@@ -99,6 +113,11 @@
     left: 50%;
  
 
+}
+.iframe {
+    width: 100%;
+    height: 50%;
+    border: none;
 }
 
 @media only screen and (min-device-width: 900px) and (max-device-width: 1600px) {
@@ -134,4 +153,51 @@
     width: 100%;
 
 }
+.titleContainer {
+    font-size: 20px;
+}
+
+.imageContainer {
+    height: 200px;
+    margin: 0;
+    width: 100%;
+}
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    opacity: 1;
+width: 100%;
+height: auto;
+    margin:  -200px auto auto auto;
+    line-height: 1.4;
+    font-size: 20px;
+    h2 {
+        font-family: Stretch;
+        color: v.$text-color;
+        text-transform: uppercase;
+        font-size: 36px;
+        line-height: 1;
+        margin: 0 0 0 0;
+    }
+
+        .textImageContainer {
+            position: relative;
+            width: 100%;
+        }
+    p 
+    {
+    margin: 0 10px;
+    }
+    iframe {
+        height: 240px;
+    }
+ 
+}
+       .cursor {
+        border: none;
+    }
+    .cursorView {
+        display: none;
+    }
 }

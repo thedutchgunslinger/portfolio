@@ -1,15 +1,17 @@
 import Link from "next/link";
 import projectDetailsStyles from "../styles/projectDetails.module.scss";
 import Image from "next/image";
+import workshop from "../public/images/workshop.png";
+import conceptboard from "../public/images/conceptboard.png";
 import dePont from "../public/images/dePont.png";
 import React from "react";
-import { motion } from "framer-motion";
 import { Reveal, Tween } from "react-gsap";
 
 const dePontDetails = () => {
   // haal de prop van de cursor state op
   const [isShown, setIsShown] = React.useState(false);
 
+  // zet de cursor positio op de muis positie als deze beweegt
   const [cursorX, setCursorX] = React.useState();
   const [cursorY, setCursorY] = React.useState();
 
@@ -37,21 +39,30 @@ const dePontDetails = () => {
         <Reveal>
           <Tween from={{ opacity: 0, y: -200 }} duration={0.7} delay={0}>
             <div className={projectDetailsStyles.titleContainer}>
-              <h1 layoutId="dePontTitle">
-                Showcase <span>Portfolio</span>
-              </h1>
+              <Link href={{ pathname: "/", query: { section: "work" } }}>
+                <h1
+                  onMouseEnter={() => {
+                    setIsShown(true);
+                  }}
+                  onMouseLeave={() => {
+                    setIsShown(false);
+                  }}
+                >
+                  Showcase <span>Portfolio</span>
+                </h1>
+              </Link>
             </div>
             <div
-              layoutId="dePontImage"
-              className={projectDetailsStyles.imageContainer}
+              className={
+                isShown
+                  ? `${projectDetailsStyles.imageContainer} ${projectDetailsStyles.imageContainerView}`
+                  : projectDetailsStyles.imageContainer
+              }
             >
-              <Link
-                href={{ pathname: "/", query: { section: "work" } }}
-                replace
-              >
+              <Link href={{ pathname: "/", query: { section: "work" } }}>
                 <Image
-                  src={dePont}
-                  alt="Picture of De pont"
+                  src={conceptboard}
+                  alt="Picture Noah Beij"
                   layout="fill"
                   objectFit="fit"
                   onMouseEnter={() => {
@@ -68,65 +79,50 @@ const dePontDetails = () => {
         <Reveal>
           <Tween from={{ opacity: 0, y: 200 }} duration={1} delay={0}>
             <div className={projectDetailsStyles.textContainer}>
-              <h2>Introduction</h2>
               <p>
-                Voor het clientproject zijn we een opdracht gaan maken voor
-                Mindlabs. Hier kregen we de opdracht om te werken aan een
-                culturele opdracht voor innovatie binnnen de ict. Samen met de
-                groep hadden we gekozen om te kijken wat we konden beteken voor
-                museum De Pont. De pont had een problem, er kwamen te weinig
-                jongeren naar het museum. Dit probleem moesten wij gaan
-                oplossen. We wilden graag wat proberen met virtual of augmented
-                reality, al snel leek augmented reality de betere keuze
-                aangezien je dan nogsteeds het museum om je heen kan zien.
-                Doormiddel van deze augmented reality wilden we graag wat meer
-                interactie rondom de kunst creeeren en er voor zorgen dat
-                jongeren meer over de achterliggende gedachten van de kunst
-                nadenken. Toen we met het project begonnen wilden we werken aan
-                3 verschillende stukken, Without Trace, Guttersplash 2 corner
-                cast en De engel van Tilburg. Nadat we een aantal prototypes
-                hadden gemaakt bleek 3 werken toch wat te veel zijn en hebben we
-                later besloten om te focussen op de Engel van Tilburg. Dit
-                project hebben we gemaakt met gebruik van de double diamond
-                werkmethode. Hieronder is een afbeelding van de double diamond
-                te vinden, de eerste diamond gaat over het probleem vaststellen,
-                de tweede gaat over het probleem oplossen.
+                Het leek me leuk om wat kennis over het vak aan mijn klasgenoten
+                te delen. Dit heb ik gedaan doormiddel van 2 workshops te geven.
+                De eerste ging workshop ging over tips en tricks binnen web
+                development waarin ik verschillende handigheidjes en tools laat
+                zien.
               </p>
-
-              <div className={projectDetailsStyles.textImageContainer}>
-                <Image
-                  src={dePont}
-                  alt="Picture of De pont"
-                  width={700}
-                  height={580}
-                />
-              </div>
-
-              <h2>Discover phase</h2>
               <p>
-                In de discover fase heb ik voortnamelijk onderzoek gedaan naar
-                verschillende technieken die we mogelijk konden gebruiken voor
-                het augmented reality te realiseren. Ik wilde graag weten of het
-                gebruik maken van een gespecialiseerde augmented reality bril
-                realisties zou zijn geweest voor ons om te gebruiken. om hier
-                achter te komen ben ik a day in the life of testen gaan
-                uitvoeren in mijn oil en bij semester 1. Hoewel de Microsoft
-                HoloLens heel erg cool was om mee te werken en het bij iedereen
-                die hem op zetten een dike glimlach op het gezicht, was het erg
-                zwaar op het hoofd, dit in combinatie met de enorm hoge prijs
-                van de bril maakte het een onrealistische oplossing voor een
-                museum. Bekijk het onderzoek document Nu we een manier hebben om
-                3d objecten weer te geven in de echte wereld hebben we nog een
-                manier nodig om die 3d objecten te maken. Met dit in gedachten
-                ben ik gaan kijken bij de ISSD of we iets hebben waarmee we
-                objecten kunnen inscannen in 3d. Dit hadden ze, de HP David
-                Systeem. Na uren aan calibreren was het me eindelijk gelukt om
-                de voorkant van een cola blikje in te scannen. Maar mijn doel
-                was om een persoon in te scannen en niet een cola blikje dus ben
-                ik gaan testen of dit mogelijk was met de 3d scanner, al vrij
-                snel kwam ik er achter dat de scanner alleen werkt met relatief
-                kleine statische objecten en absoluut dus geen personen. Bekijk
-                het onderzoek document
+                Ik had een website voorbereid voor de workshop om bij de uitleg
+                te gebruiken. Ook konden ze hier altijd stukjes code of tools
+                terug vinden als ze het nodig hadden.
+              </p>
+              <iframe
+                src={`https://www.youtube.com/embed/ZMOic7vybHU`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Embedded youtube"
+                className={projectDetailsStyles.iframe}
+              />
+              <p>
+                Ik vond dit erg leuk om te doen, ik help graag mijn mede
+                studenten als ze ergens niet uitkomen. Ook deel ik graag de
+                handigheidjes die ik geleerd hebt.
+              </p>
+              <p>
+                Een tijdje later tijdens het maken van een groepsproject kreeg
+                ik de vraag van mijn groepsgenoten of ik een workshop kon geven
+                over de programeer taal PHP omdat ze die wilde gebruiken voor
+                het project maar nog geen ervaring in hadden. Ik merkte dat meer
+                klasgenoten hier ook behoefte aan hadden en heb ik dus geregeld
+                dat ik een workshop over PHP kon geven.
+              </p>
+              <p>
+                Om deze workshop voor te bereiden heb ik een simpele blog met
+                login gemaakt om de basis van PHP uit te leggen. Dat project is
+                <a
+                  href={"https://github.com/thedutchgunslinger/WorkshopPHP"}
+                  target="blank"
+                >
+                  {" "}
+                  hier te vinden
+                </a>
+                .
               </p>
             </div>
           </Tween>

@@ -5,6 +5,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dePont from "../public/images/dePont.png";
+import dePontv2 from "../public/images/dePontv2.png";
+import workshop from "../public/images/workshop.png";
+import conceptboard from "../public/images/conceptboard.png";
 import { Reveal, Tween } from "react-gsap";
 import _ from "lodash";
 import { useRouter } from "next/router";
@@ -98,7 +101,7 @@ function browserLayoutWork({ setOnHoverState }) {
                         className={browserLayoutStyles.imgContainer}
                       >
                         <Image
-                          src={dePont}
+                          src={dePontv2}
                           alt="Picture of De pont"
                           width={700}
                           height={580}
@@ -153,12 +156,11 @@ function browserLayoutWork({ setOnHoverState }) {
                   <Reveal>
                     <Tween from={{ opacity: 0, y: -100 }} duration={1}>
                       <div
-                        layoutId="workshopImage"
                         className={browserLayoutStyles.imgContainer}
                       >
                         <Image
-                          src={dePont}
-                          alt="Picture of De pont"
+                          src={workshop}
+                          alt="Picture of Noah Beij"
                           width={700}
                           height={580}
                           onMouseEnter={() => {
@@ -216,7 +218,7 @@ function browserLayoutWork({ setOnHoverState }) {
                         className={browserLayoutStyles.imgContainer}
                       >
                         <Image
-                          src={dePont}
+                          src={conceptboard}
                           alt="Picture of De pont"
                           width={700}
                           height={580}
