@@ -1,5 +1,3 @@
-
-
 const AboutText = () => {
   return (
     <div>

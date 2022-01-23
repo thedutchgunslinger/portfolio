@@ -77,7 +77,7 @@ const dePontDetails = () => {
           </Tween>
         </Reveal>
         <Reveal>
-          <Tween from={{ opacity: 0, y: 200 }} duration={1} delay={0}>
+          <Tween from={{ opacity: 1, y: 200 }} duration={1} delay={0}>
             <div className={projectDetailsStyles.textContainer}>
               <p>
                 Het leek me leuk om wat kennis over het vak aan mijn klasgenoten

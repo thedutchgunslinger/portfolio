@@ -13,66 +13,63 @@ import _ from "lodash";
 import { useRouter } from "next/router";
 import { PrevButton, NextButton } from "./assets/EmblaCarouselButtons";
 
-
 function browserLayoutWork({ setOnHoverState }) {
-
-
-
-// check of de cursor over een slide staat
+  // check of de cursor over een slide staat
   let callOnHover = (state) => {
-  setOnHoverState(state);
+    setOnHoverState(state);
   };
 
-// haal de GET param op van de url
- const router = useRouter();
- const {
-   query: { section },
- } = router;
+  // haal de GET param op van de url
+  const router = useRouter();
+  const {
+    query: { section },
+  } = router;
 
-
-//check of de url een GET param bevat en scroll naar de juiste sectie, daarna verwijder de GET param uit de url
-   let workSection = React.useRef();
-   React.useEffect(() => {
-      if(section){
-    workSection.scrollIntoView();
-       window.scrollBy(0, -200);
-       router.replace("/", undefined, { shallow: true });
-
-      
+  //check of de url een GET param bevat en scroll naar de juiste sectie, daarna verwijder de GET param uit de url
+  let workSection = React.useRef();
+  React.useEffect(() => {
+    if (section) {
+      workSection.scrollIntoView();
+      window.scrollBy(0, -200);
+      router.replace("/", undefined, { shallow: true });
     }
-   });
- //initialiseer de carousel
-   const [viewportRef, embla] = useEmblaCarousel({
+  });
+  //initialiseer de carousel
+  const [viewportRef, embla] = useEmblaCarousel({});
+  //initialiseer de navigatie items.
+  const [prevBtnEnabled, setPrevBtnEnabled] = React.useState(false);
+  const [nextBtnEnabled, setNextBtnEnabled] = React.useState(false);
+  const [scrollProgress, setScrollProgress] = React.useState(0);
 
-   });
-//initialiseer de navigatie items.
-    const [prevBtnEnabled, setPrevBtnEnabled] = React.useState(false);
-    const [nextBtnEnabled, setNextBtnEnabled] = React.useState(false);
-    const [scrollProgress, setScrollProgress] = React.useState(0);
+  const scrollPrev = React.useCallback(
+    () => embla && embla.scrollPrev(),
+    [embla]
+  );
+  const scrollNext = React.useCallback(
+    () => embla && embla.scrollNext(),
+    [embla]
+  );
+  //check of er op de navigaties knopjes word gedrukt en scroll naar de juiste slide
+  const onSelect = React.useCallback(() => {
+    if (!embla) return;
+    setPrevBtnEnabled(embla.canScrollPrev());
+    setNextBtnEnabled(embla.canScrollNext());
+  }, [embla]);
+  //pas de progressie bar aan als er gescrolled word
+  const onScroll = React.useCallback(() => {
+    if (!embla) return;
+    const progress = Math.max(0, Math.min(1, embla.scrollProgress()));
+    setScrollProgress(progress * 100);
+  }, [embla, setScrollProgress]);
+  //voor de fucnties uit als er iets veranderd
+  React.useEffect(() => {
+    if (!embla) return;
+    onSelect();
+    onScroll();
+    embla.on("select", onSelect);
+    embla.on("scroll", onScroll);
+  }, [embla, onSelect, onScroll]);
 
-    const scrollPrev = React.useCallback(() => embla && embla.scrollPrev(), [embla]);
-    const scrollNext = React.useCallback(() => embla && embla.scrollNext(), [embla]);
-//check of er op de navigaties knopjes word gedrukt en scroll naar de juiste slide
-    const onSelect = React.useCallback(() => {
-      if (!embla) return;
-      setPrevBtnEnabled(embla.canScrollPrev());
-      setNextBtnEnabled(embla.canScrollNext());
-    }, [embla]);
-//pas de progressie bar aan als er gescrolled word
-    const onScroll = React.useCallback(() => {
-      if (!embla) return;
-      const progress = Math.max(0, Math.min(1, embla.scrollProgress()));
-      setScrollProgress(progress * 100);
-    }, [embla, setScrollProgress]);
-//voor de fucnties uit als er iets veranderd
-    React.useEffect(() => {
-      if (!embla) return;
-      onSelect();
-      onScroll();
-      embla.on("select", onSelect);
-      embla.on("scroll", onScroll);
-    }, [embla, onSelect, onScroll]);
-  
   return (
     <div
       className={browserLayoutStyles.carouselContainer}
@@ -155,9 +152,7 @@ function browserLayoutWork({ setOnHoverState }) {
                 <div className={browserLayoutStyles.slideContainer} id="slide3">
                   <Reveal>
                     <Tween from={{ opacity: 0, y: -100 }} duration={1}>
-                      <div
-                        className={browserLayoutStyles.imgContainer}
-                      >
+                      <div className={browserLayoutStyles.imgContainer}>
                         <Image
                           src={workshop}
                           alt="Picture of Noah Beij"
@@ -272,21 +267,20 @@ function browserLayoutWork({ setOnHoverState }) {
         <Reveal repeat>
           <Tween from={{ opacity: 0.2 }} duration={1} delay={0.5}>
             <div className="carouselNav">
-
               <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
               <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
-                </div>
+            </div>
             <div className="embla__progress">
               <div
                 className="embla__progress__bar"
                 style={{ transform: `translateX(${scrollProgress}%)` }}
-                />
+              />
             </div>
           </Tween>
         </Reveal>
       </div>
     </div>
   );
-};
+}
 
 export default browserLayoutWork;

@@ -1,159 +1,144 @@
 @use "variables" as v;
 
 .heroContainerGrid {
-    height: 100vh;
-    margin: 0 200px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 32px;
+  height: 100vh;
+  margin: 0 200px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
 }
 
 .heroImageContainer {
-    grid-column: 2 /4;
-    grid-row: 1 / 2;
-    height: 95vh;
-    margin: auto 0 -100px 0;
-    z-index: 1;
+  grid-column: 2 /4;
+  grid-row: 1 / 2;
+  height: 95vh;
+  margin: auto 0 -100px 0;
+  z-index: 1;
 }
 
 .heroTitleContainer {
-    grid-column: 3 /5;
-    grid-row: 1 / 2;
-    height: 200px;
-    margin: auto 0 calc(60vh + v.$margin) 0;
-    z-index: 10;
-    h1 {
-         font-family: Stretch;
-  color: v.$accent-color;
-  text-transform: uppercase;
-  font-size: 123px;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 4px;
-  -webkit-text-stroke-color: v.$accent-color;
-  line-height: 1;
-  transition: all 0.5s ease;
-  text-align: right;
-  margin: 0 0 0 0;
-    }
-    h1:hover {
-        -webkit-text-fill-color: v.$accent-color;
-        transition: all 0.5s ease;
-    }
+  grid-column: 3 /5;
+  grid-row: 1 / 2;
+  height: 200px;
+  margin: auto 0 calc(60vh + v.$margin) 0;
+  z-index: 10;
+  h1 {
+    font-family: Stretch;
+    color: v.$accent-color;
+    text-transform: uppercase;
+    font-size: 123px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: v.$accent-color;
+    line-height: 1;
+    transition: all 0.5s ease;
+    text-align: right;
+    margin: 0 0 0 0;
+  }
+  h1:hover {
+    -webkit-text-fill-color: v.$accent-color;
+    transition: all 0.5s ease;
+  }
 }
 
 .heroSubtitleContainer {
-    grid-column: 4 / 5;
-    grid-row: 1 / 2;
-    height: 100px;
-    margin: auto 0 calc(60vh - 100px) 0;
-    p {
-          font-size: 32px;
-            text-align: right;
-    }
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  height: 100px;
+  margin: auto 0 calc(60vh - 100px) 0;
+  p {
+    font-size: 32px;
+    text-align: right;
+  }
 }
 
 .scrollContainer {
-    grid-column: 4 / 5;
-    grid-row: 1 / 2;
-    height: 30vh;
-    margin: auto 0 10vh 0;
-    p {
-            margin: 0 0;
-  font-family: Stretch;
-  text-transform: uppercase;
-  font-size: 32px;
-  -webkit-text-fill-color: v.$background-color;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: v.$text-color;
-  writing-mode: vertical-lr;
-  
-    }
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+  height: 30vh;
+  margin: auto 0 10vh 0;
+  p {
+    margin: 0 0;
+    font-family: Stretch;
+    text-transform: uppercase;
+    font-size: 32px;
+    -webkit-text-fill-color: v.$background-color;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: v.$text-color;
+    writing-mode: vertical-lr;
+  }
 }
 
 @media only screen and (min-device-width: 900px) and (max-device-width: 1600px) {
-   .heroSubtitleContainer {
-  
-
+  .heroSubtitleContainer {
     p {
-          font-size: 28px;
-            text-align: right;
+      font-size: 28px;
+      text-align: right;
     }
-}
-    .heroTitleContainer {
-        margin: auto 0 calc(50vh + v.$margin) 0;
+  }
+  .heroTitleContainer {
+    margin: auto 0 calc(50vh + v.$margin) 0;
     h1 {
-   
-    font-size: 84px;
-
+      font-size: 84px;
     }
-    }
-    .scrollContainer {
-
+  }
+  .scrollContainer {
     p {
- 
-        font-size: 24px;
+      font-size: 24px;
     }
-}
-
+  }
 }
 
 @media only screen and (max-width: 800px) {
-    .heroContainerGrid {
-    
-        width: 100vw;
+  .heroContainerGrid {
+    width: 100vw;
     height: 90vh;
     margin: 0;
     display: flex;
     flex-direction: column;
- 
-}
-.HeroTitleContainer {
+  }
+  .HeroTitleContainer {
     margin-right: 0;
     z-index: 10;
     height: auto;
     margin: 0;
-
-
-}
-.heroTitleContainer h1 {
-        position: absolute;
-  font-size: 46px!important;
+  }
+  .heroTitleContainer h1 {
+    position: absolute;
+    font-size: 46px !important;
     top: -450px;
-  right: 10%;
-  width: 300px;
-    }
-.heroImageContainer {
+    right: 10%;
+    width: 300px;
+  }
+  .heroImageContainer {
     margin: 100px auto;
     width: 60%;
     z-index: 1;
     height: auto;
-}
-.scrollContainer {
+  }
+  .scrollContainer {
     position: absolute;
     height: 30vh;
     align-self: flex-end;
     top: 35%;
-right: 10%;
+    right: 10%;
     // margin: auto 0 10vh 0;
     p {
-            margin: 0 0;
-  font-family: Stretch;
-  text-transform: uppercase;
-  font-size: 24px;
-
-  
+      margin: 0 0;
+      font-family: Stretch;
+      text-transform: uppercase;
+      font-size: 24px;
     }
-}
-.heroSubtitleContainer {
+  }
+  .heroSubtitleContainer {
     position: absolute;
     bottom: -160px;
     height: 100px;
     right: 20%;
     width: 200px;
     p {
-          font-size: 24px;
-            // text-align: right;
+      font-size: 24px;
+      // text-align: right;
     }
-}
-
+  }
 }

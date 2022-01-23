@@ -1,14 +1,14 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 .layoutFlex {
-    display: flex;
-    flex-direction: column;
-    gap: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 300px;
 }
 
 @media only screen and (max-width: 800px) {
-    .layoutFlex {
-        flex-direction: column;
-        gap: 0;
-    }
+  .layoutFlex {
+    flex-direction: column;
+    gap: 0;
+  }
 }

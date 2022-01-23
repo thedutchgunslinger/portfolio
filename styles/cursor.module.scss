@@ -1,48 +1,47 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 .cursor {
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: 2px solid v.$text-color;
-    opacity: .5;
-    transition-duration: 100ms;
-    transition-timing-function: ease-out;
-    transform: translate(-50%, -50%);
-    z-index: 11;
-    pointer-events: none;
-    transition-duration: 300ms;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid v.$text-color;
+  opacity: 0.5;
+  transition-duration: 100ms;
+  transition-timing-function: ease-out;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  pointer-events: none;
+  transition-duration: 300ms;
 }
 
 .cursorView {
-    width: 80px;
-    height: 80px;
-    transform: scale(4);
-    transform: translate(-50%, -50%);
-    transition-duration: 300ms;
-    opacity: 1;
-   
-    border: 1px solid v.$text-color;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  width: 80px;
+  height: 80px;
+  transform: scale(4);
+  transform: translate(-50%, -50%);
+  transition-duration: 300ms;
+  opacity: 1;
+
+  border: 1px solid v.$text-color;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .cursorView::after {
-    content: "View";
-    position: absolute;
-    font-size: 24px;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
- 
-
+  content: "View";
+  position: absolute;
+  font-size: 24px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 @media only screen and (max-width: 800px) {
-    .cursor {
-        border: none;
-    }
-    .cursorView {
-        display: none;
-    }
+  .cursor {
+    border: none;
+  }
+  .cursorView {
+    display: none;
+  }
 }

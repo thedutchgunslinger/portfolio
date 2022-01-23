@@ -1,14 +1,9 @@
-import indexStyles from '../styles/index.module.scss';
+import indexStyles from "../styles/index.module.scss";
 import cursorStyles from "../styles/cursor.module.scss";
-import BrowserLayoutHero from '../layout/browserLayoutHero';
-import BrowserLayoutWork from '../layout/browserLayoutWork';
-import BrowserLayoutMyStory from '../layout/browserLayoutMyStory';
+import BrowserLayoutHero from "../layout/browserLayoutHero";
+import BrowserLayoutWork from "../layout/browserLayoutWork";
+import BrowserLayoutMyStory from "../layout/browserLayoutMyStory";
 import React from "react";
-
-
-
-
-
 
 export default function Home() {
   // haal de prop van de cursor state op

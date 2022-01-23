@@ -1,16 +1,16 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 .flexContact {
-    display: flex;
-    flex-direction: column;
-    font-family: Stretch;
-    font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  font-family: Stretch;
+  font-size: 20px;
 }
 
 .flexIcons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }

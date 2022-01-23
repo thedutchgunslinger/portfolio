@@ -7,23 +7,20 @@ import dePont from "../public/images/dePont.png";
 import React from "react";
 import { Reveal, Tween } from "react-gsap";
 
-
-
-
 const dePontDetails = () => {
   // haal de prop van de cursor state op
-    const [isShown, setIsShown] = React.useState(false);
+  const [isShown, setIsShown] = React.useState(false);
 
-// zet de cursor positio op de muis positie als deze beweegt
-    const [cursorX, setCursorX] = React.useState();
-    const [cursorY, setCursorY] = React.useState();
+  // zet de cursor positio op de muis positie als deze beweegt
+  const [cursorX, setCursorX] = React.useState();
+  const [cursorY, setCursorY] = React.useState();
 
-    React.useEffect(() => {
-      window.addEventListener("mousemove", (e) => {
-        setCursorX(e.pageX);
-        setCursorY(e.pageY);
-      });
-    }, []);
+  React.useEffect(() => {
+    window.addEventListener("mousemove", (e) => {
+      setCursorX(e.pageX);
+      setCursorY(e.pageY);
+    });
+  }, []);
 
   return (
     <div>
