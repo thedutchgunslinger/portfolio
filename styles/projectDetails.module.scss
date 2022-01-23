@@ -155,6 +155,18 @@
 }
 .titleContainer {
     font-size: 20px;
+    margin: auto 10px;
+}
+.titleContainer::after {
+    content: "Go Back";
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    height: 1px;
+    background-color: v.$text-color;
+    margin: 10px 0;
+    pointer-events: none;
 }
 
 .imageContainer {
@@ -169,7 +181,7 @@
     opacity: 1;
 width: 100%;
 height: auto;
-    margin:  -200px auto auto auto;
+    margin:  -20px auto auto auto;
     line-height: 1.4;
     font-size: 20px;
     h2 {
@@ -187,7 +199,7 @@ height: auto;
         }
     p 
     {
-    margin: 0 10px;
+    margin: 10px 10px;
     }
     iframe {
         height: 240px;
